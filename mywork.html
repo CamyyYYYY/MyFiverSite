@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page 1 - Welcome</title>
+  <title>Our Work</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      background: linear-gradient(135deg, #111111, #333333);
-    }
     html, body {
       height: 100%;
       margin: 0;
       overflow: hidden;
+      perspective: 1000px;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .card {
       transition: transform 0.1s ease;
+      will-change: transform;
     }
   </style>
 </head>
 <body>
   <div class="card" id="card">
-    <h1>Welcome to My Website!</h1>
-    <p>Click Here For More Options</p>
-    <a href="main-menu.html" class="button">Go to Main Menu</a>
+    <h1>My Work</h1>
+    <p>Explore a gallery of my web projects and creative builds (coming soon).</p>
+    <a href="main-menu.html" class="button">⬅ Back to Main Menu</a>
   </div>
 
   <script>
