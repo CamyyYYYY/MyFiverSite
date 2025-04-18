@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      transition: transform 0.1s ease;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>About Me</h1>
+    <p>Hello, my name is Camrin, I enjoy creating immersive 3D web experiences that combine aesthetics with interactivity. Come see for your self!</p>
+    <a href="page3.html" class="button">⬅ Back to Main Menu</a>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+    document.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.clientX) / 25;
+      const y = (window.innerHeight / 2 - e.clientY) / 25;
+      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
+</body>
+</html>

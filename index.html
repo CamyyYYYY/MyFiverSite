@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page 1 - Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #111111, #333333);
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .card {
+      transition: transform 0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Welcome to My Website!</h1>
+    <p>Click Here For More Options</p>
+    <a href="page3.html" class="button">Go to Main Menu</a>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+    document.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.clientX) / 25;
+      const y = (window.innerHeight / 2 - e.clientY) / 25;
+      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
+</body>
+</html>

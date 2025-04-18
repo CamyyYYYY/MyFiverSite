@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Quotes</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #4b3b00, #c48b00);
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .card {
+      transition: transform 0.1s ease;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Request a Quote</h1>
+    <p>Need a custom 3D website or digital experience?</p>
+    <p>Let me know what you’re looking for and I’ll send you a pricing quote.</p>
+    <p>📧 Email: <a href="#" id="copyEmail" class="email-link">allencamrin@gmail.com</a></p>
+    <p>📞 Call or text: (323) 369-4820</p>
+    <a href="page3.html" class="button">⬅ Back to Main Menu</a>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+    document.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.clientX) / 25;
+      const y = (window.innerHeight / 2 - e.clientY) / 25;
+      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+
+    const emailLink = document.getElementById('copyEmail');
+    emailLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = emailLink.textContent.trim();
+      const confirmed = confirm(`Do you want to copy this email?\n${email}`);
+      if (confirmed) {
+        navigator.clipboard.writeText(email).then(() => {
+          alert("Email copied to clipboard!");
+        }).catch(() => {
+          alert("Failed to copy email.");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
